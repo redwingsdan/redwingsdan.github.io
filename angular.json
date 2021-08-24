@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wellness-application": {
+    "dayley-update": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wellness-application",
+            "outputPath": "dist/dayley-update",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -65,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wellness-application:build"
+            "browserTarget": "dayley-update:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wellness-application:build:production"
+              "browserTarget": "dayley-update:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wellness-application:build"
+            "browserTarget": "dayley-update:build"
           }
         },
         "test": {
@@ -91,7 +87,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -113,16 +109,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wellness-application:serve"
+            "devServerTarget": "dayley-update:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wellness-application:serve:production"
+              "devServerTarget": "dayley-update:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "wellness-application"
+  "defaultProject": "dayley-update"
 }
