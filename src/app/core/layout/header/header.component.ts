@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { faUser, faUserSecret } from '@fortawesome/free-solid-svg-icons';
 import { forkJoin, Subscription } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import navData from './nav.data';
 
 @Component({
@@ -11,6 +11,8 @@ import navData from './nav.data';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   user: any;
+  faUser = faUser;
+  faUserSecret = faUserSecret;
   isMenuOpen = false;
   navData = navData;
   routerSubscription: Subscription;

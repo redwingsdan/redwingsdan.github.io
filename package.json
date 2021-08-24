@@ -24,6 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
+    "ng-inline-svg": "^13.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

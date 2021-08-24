@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { RecipesComponent } from './recipes.component';
 import { RecipeRoutes } from './recipes.routes';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     RecipesComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     RouterModule.forChild(RecipeRoutes)
   ],
   providers: []

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { LayoutComponent } from './core/layout/layout.component';
 
 export const AppRoutes: Routes = [
   //{
@@ -19,17 +20,16 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'home',
-        //loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule),
-        pathMatch: 'full',
-        redirectTo: 'events/owner/1'
+        loadChildren: () => import('app/modules/home/home.module').then(m => m.HomeModule),
+        pathMatch: 'full'
       },
       {
-        path: 'utilities',
-        loadChildren: () => import('@modules/recipes/recipes.module').then(m => m.RecipesModule)
+        path: 'recipes',
+        loadChildren: () => import('app/modules/recipes/recipes.module').then(m => m.RecipesModule)
       },
       {
-        path: 'game-report',
-        loadChildren: () => import('@modules/travel-blog/travel-blog.module').then(m => m.TravelBlogModule)
+        path: 'travel-blog',
+        loadChildren: () => import('app/modules/travel-blog/travel-blog.module').then(m => m.TravelBlogModule)
       },
     ]
   },

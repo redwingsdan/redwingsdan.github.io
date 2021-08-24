@@ -1,37 +1,11 @@
-<nav class="header" [ngClass]="{'impersonated-header' : user.impersonatedBy}">
+<nav class="header" [ngClass]="{'impersonated-header' : user?.impersonatedBy}">
   <div class="main-header-wrapper">
     <div class="svg-container logo-container">
-      <div class="logo" [inlineSVG]="'./assets/images/au-logo-light.svg'" [routerLink]="['/app/home']"></div>
+      <div class="logo" [routerLink]="['/app/home']"></div>
     </div>
 
     <div class="top-nav-container">
-      <top-nav (navAction)="navAction($event)" [navData]="navData" [currentUser]="user" [isLbi]="isLbi"></top-nav>
-    </div>
-
-    <div class="lui-header-actions">
-      <fa-icon [icon]="isMenuOpen ? faTimes : faBars" class="action-icon menu-icon" (click)="toggleMobileMenu()">
-      </fa-icon>
-      <fa-icon [icon]="user.impersonatedBy ? faUserSecret : faUser" [matMenuTriggerFor]="userMenu"
-        class="action-icon user-icon" [ngClass]="{ 'impersonating-user' : user.impersonatedBy }">
-      </fa-icon>
-      <mat-menu #userMenu="matMenu" xPosition="before">
-        <div class="user-display">
-          <div class="current-user-display">
-            <div class="user-label">Current User</div>
-            <div class="user-value">{{ user.impersonatedBy ? user.impersonatedBy : user.emailAddress }}</div>
-          </div>
-          <div class="current-user-display" style="margin-top:5px">
-            <div class="user-label">Version: </div>
-            <div class="user-value">v{{appVersion}}(API v{{apiVersion}}) </div>
-          </div>
-          <div class="impersonating-user-display" *ngIf="user.impersonatedBy">
-            <div class="user-label">Impersonating</div>
-            <div class="user-value">{{user.emailAddress}}</div>
-          </div>
-        </div>
-        <button mat-menu-item *ngIf="user.impersonatedBy" (click)="stopImpersonation()">Stop Impersonating</button>
-        <button mat-menu-item (click)="doLogout()">Log Out</button>
-      </mat-menu>
+      <top-nav (navAction)="navAction($event)" [navData]="navData" [currentUser]="user"></top-nav>
     </div>
   </div>
 </nav>
