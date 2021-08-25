@@ -1,16 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RecipesComponent } from './recipes.component';
 import { RecipeRoutes } from './recipes.routes';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CoreModule } from '../../shared/core.module';
 
 @NgModule({
   declarations: [
     RecipesComponent
   ],
   imports: [
-    CommonModule,
+    CoreModule,
     RouterModule.forChild(RecipeRoutes)
   ],
   providers: []
