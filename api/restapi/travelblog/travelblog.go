@@ -10,17 +10,18 @@ import (
 )
 
 type TravelBlog struct {
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	BlogId    int8   `json:"blogId"`
+	Title       string `json:"title"`
+	TextContent string `json:"textContent"`
+	BlogId      int8   `json:"blogId"`
 }
 
 var AllBlogs []TravelBlog
 
 func PopulateBlogs() {
 	AllBlogs = []TravelBlog{
-		TravelBlog{FirstName: "Daniel", LastName: "Peterson", BlogId: 1},
-		TravelBlog{FirstName: "Kayley", LastName: "Murphy", BlogId: 2},
+		TravelBlog{Title: "Destination 1", TextContent: "This is a sample text", BlogId: 1},
+		TravelBlog{Title: "Destination 2", TextContent: "This is a sample text", BlogId: 2},
+		TravelBlog{Title: "Destination 3", TextContent: "This is a sample text", BlogId: 3},
 	}
 }
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { dummyData, Recipe } from '../../shared/recipes/recipes.interface';
+import { Observable } from 'rxjs';
+import { Recipe } from '../../shared/recipes/recipes.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,13 +12,11 @@ export class RecipesService {
   constructor(private http: HttpClient) { }
 
   getAllRecipes(searchForm: any): Observable<Recipe[]> {
-    return of(dummyData);
     return this.http
       .post<any>(`${this.API_URL}/load`, searchForm);
   }
 
   getRecipeById(recipeId: number): Observable<Recipe> {
-    return of(dummyData.find(d => d.recipeId == recipeId));
     return this.http
       .get<any>(`${this.API_URL}/${recipeId}`);
   }

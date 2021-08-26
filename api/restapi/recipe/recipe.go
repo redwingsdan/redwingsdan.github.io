@@ -10,17 +10,18 @@ import (
 )
 
 type Recipe struct {
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	RecipeId  int8   `json:"recipeId"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	RecipeId    int8   `json:"recipeId"`
 }
 
 var AllRecipes []Recipe
 
 func PopulateRecipes() {
 	AllRecipes = []Recipe{
-		Recipe{FirstName: "Daniel", LastName: "Peterson", RecipeId: 1},
-		Recipe{FirstName: "Kayley", LastName: "Murphy", RecipeId: 2},
+		Recipe{Name: "Recipe 1", Description: "This is a sample description", RecipeId: 1},
+		Recipe{Name: "Recipe 2", Description: "This is a sample description", RecipeId: 2},
+		Recipe{Name: "Recipe 3", Description: "This is a sample description", RecipeId: 3},
 	}
 }
 
