@@ -8,6 +8,8 @@ import { AppRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from './core/layout/layout.module';
 import { CommonModule } from '@angular/common';
+import { environment } from '@env/environment.prod';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { CommonModule } from '@angular/common';
     LayoutModule,
     HttpClientModule,
     InlineSVGModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule.forRoot(AppRoutes, {
       enableTracing: false
     })
