@@ -1,6 +1,5 @@
 <div class="container">
   <div *ngFor="let blog of blogs">
-    <span>{{blog.blogId}}</span>
-    <span>{{blog.title}}</span>
+    <blog-card [blog]="blog" (click)="goToBlog(blog.blogId)"></blog-card>
   </div>
 </div>

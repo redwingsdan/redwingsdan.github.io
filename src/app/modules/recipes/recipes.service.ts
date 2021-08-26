@@ -17,4 +17,10 @@ export class RecipesService {
     return this.http
       .post<any>(`${this.API_URL}/load`, searchForm);
   }
+
+  getRecipeById(recipeId: number): Observable<Recipe> {
+    return of(dummyData.find(d => d.recipeId == recipeId));
+    return this.http
+      .get<any>(`${this.API_URL}/${recipeId}`);
+  }
 }

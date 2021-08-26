@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TravelBlog } from '../../shared/travel-blog/travel-blog.interface';
 import { TravelBlogService } from './travel-blog.service';
 
@@ -9,7 +10,11 @@ import { TravelBlogService } from './travel-blog.service';
 })
 export class TravelBlogComponent implements OnInit {
   blogs: TravelBlog[];
-  constructor(private service: TravelBlogService) {}
+  constructor(
+    private service: TravelBlogService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.search();
@@ -20,5 +25,9 @@ export class TravelBlogComponent implements OnInit {
     this.service.getAllBlogs(form).subscribe(data => {
       this.blogs = data;
     });
+  }
+
+  goToBlog(blogId: number) {
+    this.router.navigate([`/app/travel-blog/${blogId}`], {relativeTo: this.route});
   }
 }

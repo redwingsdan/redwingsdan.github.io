@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../shared/recipes/recipes.interface';
 import { RecipesService } from './recipes.service';
 
@@ -9,7 +10,11 @@ import { RecipesService } from './recipes.service';
 })
 export class RecipesComponent implements OnInit {
   recipes: Recipe[];
-  constructor(private service: RecipesService) {}
+  constructor(
+    private service: RecipesService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.search();
@@ -20,5 +25,9 @@ export class RecipesComponent implements OnInit {
     this.service.getAllRecipes(form).subscribe(data => {
       this.recipes = data;
     });
+  }
+
+  goToRecipe(recipeId: number) {
+    this.router.navigate([`/app/recipes/${recipeId}`], {relativeTo: this.route});
   }
 }

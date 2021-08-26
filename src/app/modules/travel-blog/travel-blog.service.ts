@@ -17,4 +17,10 @@ export class TravelBlogService {
     return this.http
       .post<any>(`${this.API_URL}/load`, searchForm);
   }
+
+  getBlogById(blogId: number): Observable<TravelBlog> {
+    return of(dummyData.find(d => d.blogId == blogId));
+    return this.http
+      .get<any>(`${this.API_URL}/${blogId}`);
+  }
 }
