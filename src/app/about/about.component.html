@@ -1,0 +1,92 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <div class="personal-info-container">
+      <div class="name">Daniel Peterson</div>
+      <div class="job-title">Software Engineer</div>
+      <div class="location">Stratford, CT</div>
+      <div class="email">djp21795@gmail.com</div>
+      <div class="experience">{{years}} years of professional experience</div>
+      <div class="about-me">I am a driven, hardworking individual with a passion for sports. I love to help others learn and always look to improve myself and my work.
+        In my free time, I enjoy playing hockey, cooking, and traveling.</div>
+      <div class="contact-info-container">
+        <div class="linkedin-icon" placement="top" ngbTooltip="Connect on Linkedin">
+          <a target="_blank" href="https://www.linkedin.com/in/daniel-j-peterson/">
+            <mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="Linkedin"></mat-icon>
+          </a>
+        </div>
+        <div class="github-icon" placement="top" ngbTooltip="Follow on Github">
+          <a target="_blank" href="https://github.com/redwingsdan">
+            <mat-icon svgIcon="github" aria-hidden="false" aria-label="Github"></mat-icon>
+          </a>
+        </div>
+        <div class="stackoverflow-icon" placement="top" ngbTooltip="Follow on StackOverflow">
+          <a target="_blank" href="https://stackoverflow.com/users/15187468/redwingsdan">
+            <mat-icon svgIcon="stackoverflow" aria-hidden="false" aria-label="StackOverflow"></mat-icon>
+          </a>
+        </div>
+        <div class="twitter-icon" placement="top" ngbTooltip="Follow on Twitter">
+          <a target="_blank" href="https://twitter.com/danpeterson1995">
+            <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="Twitter"></mat-icon>
+          </a>
+        </div>
+        <div class="medium-icon">
+          <!--TODO add medium icon and link-->
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="content">
+      <div style="text-align: center;">
+        <label>Skills</label>
+      </div>
+      <div class="skills-container">
+        <mat-chip-list aria-label="Skills">
+          <mat-chip *ngFor="let skill of skills">{{skill}}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" rowHeight="1:2" class="fit-content">
+    <div class="content">
+      <div style="text-align: center;">
+        <label>Projects</label>
+      </div>
+      <div class="projects-container">
+        <div class="dayley-update" style="border-right: 1px solid black; padding-right: 10px;">
+          <div class="title">Travel Blog</div>
+          <div class="description">A travel blog created by my wife and I to document our travels and share our experiences and recommendations to others.</div>
+          <!--TODO add picture and link to the blog-->
+          <div class="image"></div>
+          <div class="link"></div>
+        </div>
+
+        <div class="colors-game" style="border-right: 1px solid black; padding-right: 10px; padding-left: 10px;">
+          <div class="title">Colors Game</div>
+          <div class="description">A simple HTML game where you have a set number of turns to color all squares in a grid the same color.</div>
+          <div class="image">
+            <img src="./assets/images/colorsGame.png" alt="image">
+          </div>
+          <div class="link">
+            <a target="_blank" href="https://redwingsdan.github.io/Colors-Game/">
+              Play Game Here
+            </a>
+          </div>
+        </div>
+
+        <div class="stock-market-scraper" style="padding-left: 10px;">
+          <div class="title">Stock Market Scraper</div>
+          <div class="description">A python scraping tool that pulls price info from Google Finance and generates a csv containing the value of stock holdings.</div>
+          <div class="image">
+            <img src="./assets/images/stockMarket.jpg" alt="image">
+          </div>
+          <div class="link">
+            <a target="_blank" href="https://github.com/redwingsdan/Stock-Market-Scraper">
+              Download Here
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

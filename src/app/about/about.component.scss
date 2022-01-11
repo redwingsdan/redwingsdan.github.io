@@ -1,0 +1,47 @@
+img {
+  height: 200px;
+}
+
+.personal-info-container {
+  border: black solid 1px;
+  border-radius: 10px;
+  display: block;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.skills-container {
+  border: black solid 1px;
+  border-radius: 10px;
+  display: block;
+  margin-left: 15px;
+  padding: 10px;
+}
+
+.contact-info-container {
+  display: flex;
+  div {
+    margin-right: 10px;
+  }
+}
+
+.projects-container {
+  border: black solid 1px;
+  border-radius: 10px;
+  display: block;
+  padding-left: 10px;
+  margin-left: 15px;
+  display: flex;
+}
+
+.title {
+  font-size: 20px;
+}
+
+* {
+  font-size: 15px;
+}
+
+label {
+  font-size: 30px;
+}
